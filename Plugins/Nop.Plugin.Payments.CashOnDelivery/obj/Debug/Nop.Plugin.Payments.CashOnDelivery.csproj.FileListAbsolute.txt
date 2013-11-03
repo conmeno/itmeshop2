@@ -1,0 +1,5 @@
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.CashOnDelivery\Description.txt
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.CashOnDelivery\Nop.Plugin.Payments.CashOnDelivery.dll
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.CashOnDelivery\Nop.Plugin.Payments.CashOnDelivery.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.CashOnDelivery\obj\Debug\Nop.Plugin.Payments.CashOnDelivery.dll
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.CashOnDelivery\obj\Debug\Nop.Plugin.Payments.CashOnDelivery.pdb

@@ -940,6 +940,41 @@
     <Content Include="Scripts\public.common.mobile.js" />
     <Content Include="Themes\DefaultClean\Content\images\star-x-active.png" />
     <Content Include="Themes\DefaultClean\Content\images\star-x-inactive.png" />
+    <Content Include="Themes\Itme\Content\ie6.css" />
+    <Content Include="Themes\Itme\Content\ie7.css" />
+    <Content Include="Themes\Itme\Content\images\ajax_loader_large.gif" />
+    <Content Include="Themes\Itme\Content\images\ajax_loader_small.gif" />
+    <Content Include="Themes\Itme\Content\images\arrow-up.png" />
+    <Content Include="Themes\Itme\Content\images\bbeditor-button-bg.gif" />
+    <Content Include="Themes\Itme\Content\images\bullet-left.gif" />
+    <Content Include="Themes\Itme\Content\images\bullet-right.gif" />
+    <Content Include="Themes\Itme\Content\images\closelabel.gif" />
+    <Content Include="Themes\Itme\Content\images\download-sample-bg.gif" />
+    <Content Include="Themes\Itme\Content\images\forum-footer-bg.gif" />
+    <Content Include="Themes\Itme\Content\images\forum-header-bg.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-arrow-r.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-close-notification-bar.png" />
+    <Content Include="Themes\Itme\Content\images\ico-delete.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-edit.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-forum-post-add.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-forum-post-high.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-forum-post.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-forum-watch.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-forum.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-move-topic.gif" />
+    <Content Include="Themes\Itme\Content\images\ico-pm.png" />
+    <Content Include="Themes\Itme\Content\images\ico-rss.gif" />
+    <Content Include="Themes\Itme\Content\images\loading.gif" />
+    <Content Include="Themes\Itme\Content\images\logo.gif" />
+    <Content Include="Themes\Itme\Content\images\logo.png" />
+    <Content Include="Themes\Itme\Content\images\nextlabel.gif" />
+    <Content Include="Themes\Itme\Content\images\prevlabel.gif" />
+    <Content Include="Themes\Itme\Content\images\progress-step-active.gif" />
+    <Content Include="Themes\Itme\Content\images\progress-step-inactive.gif" />
+    <Content Include="Themes\Itme\Content\images\star-x-active.png" />
+    <Content Include="Themes\Itme\Content\images\star-x-inactive.png" />
+    <Content Include="Themes\Itme\Content\styles.css" />
+    <Content Include="Themes\Itme\Content\styles.rtl.css" />
     <Content Include="Themes\Mobile\Content\images\ajax-loader.gif" />
     <Content Include="Content\Images\default-avatar.jpg" />
     <Content Include="Content\Images\flags\ad.png" />
@@ -1740,6 +1775,9 @@
     <Content Include="Views\Common\PageNotFound.Mobile.cshtml" />
     <Content Include="Views\Common\EuCookieLaw.Mobile.cshtml" />
     <Content Include="Views\Common\EuCookieLaw.cshtml" />
+    <Content Include="Themes\Itme\theme.config" />
+    <Content Include="Themes\Itme\Views\Shared\Head.cshtml" />
+    <Content Include="Themes\Itme\Views\Web.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

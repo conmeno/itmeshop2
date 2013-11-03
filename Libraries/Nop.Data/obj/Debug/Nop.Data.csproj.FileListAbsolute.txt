@@ -1,0 +1,15 @@
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Nop.Data.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Nop.Data.pdb
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\EntityFramework.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Nop.Core.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\System.Data.SqlServerCe.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\System.Data.SqlServerCe.Entity.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Autofac.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Autofac.Integration.Mvc.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Nop.Core.pdb
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\EntityFramework.xml
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Autofac.xml
+D:\itme\itmeshop2\Libraries\Nop.Data\bin\Debug\Autofac.Integration.Mvc.xml
+D:\itme\itmeshop2\Libraries\Nop.Data\obj\Debug\Nop.Data.csprojResolveAssemblyReference.cache
+D:\itme\itmeshop2\Libraries\Nop.Data\obj\Debug\Nop.Data.dll
+D:\itme\itmeshop2\Libraries\Nop.Data\obj\Debug\Nop.Data.pdb

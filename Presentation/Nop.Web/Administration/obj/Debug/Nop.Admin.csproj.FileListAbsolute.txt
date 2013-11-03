@@ -1,0 +1,6 @@
+D:\itme\itmeshop2\Presentation\Nop.Web\bin\sitemap.config
+D:\itme\itmeshop2\Presentation\Nop.Web\bin\Nop.Admin.dll
+D:\itme\itmeshop2\Presentation\Nop.Web\bin\Nop.Admin.pdb
+D:\itme\itmeshop2\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
+D:\itme\itmeshop2\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
+D:\itme\itmeshop2\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb

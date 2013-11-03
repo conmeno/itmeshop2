@@ -1,0 +1,5 @@
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Description.txt
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll
+D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.dll
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.pdb

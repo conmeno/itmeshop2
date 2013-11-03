@@ -1,0 +1,9 @@
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\Nop.Tests.dll
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\Nop.Tests.pdb
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\nunit.framework.dll
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.dll
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\nunit.framework.xml
+D:\itme\itmeshop2\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.xml
+D:\itme\itmeshop2\Tests\Nop.Tests\obj\Debug\Nop.Tests.csprojResolveAssemblyReference.cache
+D:\itme\itmeshop2\Tests\Nop.Tests\obj\Debug\Nop.Tests.dll
+D:\itme\itmeshop2\Tests\Nop.Tests\obj\Debug\Nop.Tests.pdb
