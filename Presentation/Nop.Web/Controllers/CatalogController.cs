@@ -1244,8 +1244,7 @@ namespace Nop.Web.Controllers
 
                     return catModel;
                 })
-                .ToList();
-
+                .ToList(); 
             return PartialView(listModel);
         }
 
@@ -1916,6 +1915,8 @@ namespace Nop.Web.Controllers
         [ChildActionOnly]
         public ActionResult HomepageProducts(int? productThumbPictureSize)
         {
+            var temp = _categoryService.GetProductCategoriesByCategoryId(2, 0, 10);
+
             var products = _productService.GetAllProductsDisplayedOnHomePage();
             //ACL and store mapping
             products = products.Where(p => _aclService.Authorize(p) && _storeMappingService.Authorize(p)).ToList();

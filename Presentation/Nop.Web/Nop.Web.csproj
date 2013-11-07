@@ -1778,6 +1778,7 @@
     <Content Include="Themes\Itme\theme.config" />
     <Content Include="Themes\Itme\Views\Shared\Head.cshtml" />
     <Content Include="Themes\Itme\Views\Web.config" />
+    <Content Include="Views\Shared\_Itmeshop.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
