@@ -3,3 +3,4 @@ D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.CashOnDelivery\Nop.Plugi
 D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.CashOnDelivery\Nop.Plugin.Payments.CashOnDelivery.pdb
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.CashOnDelivery\obj\Debug\Nop.Plugin.Payments.CashOnDelivery.dll
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.CashOnDelivery\obj\Debug\Nop.Plugin.Payments.CashOnDelivery.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.CashOnDelivery\obj\Debug\Nop.Plugin.Payments.CashOnDelivery.csprojResolveAssemblyReference.cache

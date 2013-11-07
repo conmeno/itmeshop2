@@ -226,6 +226,42 @@ namespace Nop.Web.Controllers
         }
 
         [NonAction]
+        protected IList<CategoryNavigationModel.CategoryModel> PrepareCategoryNavigationModel1(int rootCategoryId      )
+        {
+            var result = new List<CategoryNavigationModel.CategoryModel>();
+            foreach (var category in _categoryService.GetAllCategoriesByParentCategoryId(rootCategoryId))
+            {
+                var categoryModel = new CategoryNavigationModel.CategoryModel()
+                {
+                    Id = category.Id,
+                    Name = category.GetLocalized(x => x.Name),
+                    SeName = category.GetSeName()
+                };
+
+                //product number for each category
+                if (_catalogSettings.ShowCategoryProductNumber)
+                {
+                    var categoryIds = new List<int>();
+                    categoryIds.Add(category.Id);
+                    //include subcategories
+                    if (_catalogSettings.ShowCategoryProductNumberIncludingSubcategories)
+                        categoryIds.AddRange(GetChildCategoryIds(category.Id));
+                    categoryModel.NumberOfProducts = _productService
+                        .SearchProducts(categoryIds: categoryIds,
+                        storeId: _storeContext.CurrentStore.Id,
+                        visibleIndividuallyOnly: true,
+                        pageSize: 1)
+                        .TotalCount;
+                } 
+                        categoryModel.SubCategories.AddRange(PrepareCategoryNavigationModel1(category.Id));
+
+                result.Add(categoryModel);
+            }
+
+            return result;
+        }
+
+        [NonAction]
         protected IEnumerable<ProductOverviewModel> PrepareProductOverviewModels(IEnumerable<Product> products, 
             bool preparePriceModel = true, bool preparePictureModel = true,
             int? productThumbPictureSize = null, bool prepareSpecificationAttributes = false,
@@ -1165,14 +1201,15 @@ namespace Nop.Web.Controllers
                         : new List<int>();
                     return new CategoryNavigationModel()
                     {
-                        Categories = PrepareCategoryNavigationModel(0, breadCrumb).ToList()
+                        Categories = PrepareCategoryNavigationModel1(0).ToList()
                     };                                      
                 }
             );
 
             //"CurrentCategoryId" property of "CategoryNavigationModel" object depends on the current category or product.
             //We need to clone the cached model (the updated one should not be cached)
-            var model = (CategoryNavigationModel)cachedModel.Clone();
+            var model =  (CategoryNavigationModel)cachedModel.Clone();
+                 
             model.CurrentCategoryId = activeCategoryId;
 
             return PartialView(model);

@@ -53,5 +53,37 @@
     
          ], { duration: 3000, fade: 750 });
     </script>
+
+
+         <!-- SmartMenus core CSS (required) -->
+<link href="/Content/sm/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/Content/sm/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/sm/jquery.smartmenus.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#main-menu').smartmenus({
+                mainMenuSubOffsetX: 1,
+                mainMenuSubOffsetY: -8,
+                subMenusSubOffsetX: 1,
+                subMenusSubOffsetY: -8
+            });
+        });
+</script>
+     
+    <style type="text/css">
+
+	#main-menu {
+		position:relative;
+		z-index:99;
+		width:auto;
+	}
+	#main-menu ul {
+		width:12em; /* fixed width only please - you can use the "subMenusMinWidth"/"subMenusMaxWidth" script options to override this if you like */
+	}
+
+</style>
+
 </body>
 </html>

@@ -32,11 +32,11 @@
         </a>
         @{
             if (category.Id == Model.CurrentCategoryId ||
-                category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0)
+                category.SubCategories.Count() > 0)
             {
                 if (category.SubCategories.Count > 0)
                 {
-            <ul class="sublist">
+            <ul>
                 @foreach (var subCategory in category.SubCategories)
                 {
                     @RenderCategoryLine(subCategory)
@@ -53,13 +53,16 @@
         <div class="title">
             <strong>@T("Categories")</strong>
         </div>
-        <div class="listbox">
-            <ul class="list">
+        <div>
+            @*<ul class="list">*@
+            <ul id="main-menu" class="sm sm-vertical sm-blue sm-blue-vertical">
                 @foreach (var category in Model.Categories)
                 {
                     @RenderCategoryLine(category)
                 }
             </ul>
+
+
         </div>
     </div>
 }

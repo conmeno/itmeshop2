@@ -96,10 +96,10 @@ namespace Nop.Web.Controllers
             IGenericAttributeService genericAttributeService, IWebHelper webHelper,
             IPermissionService permissionService, IMobileDeviceHelper mobileDeviceHelper,
             HttpContextBase httpContext, ICacheManager cacheManager,
-            ICustomerActivityService customerActivityService, CustomerSettings customerSettings, 
+            ICustomerActivityService customerActivityService, CustomerSettings customerSettings,
             TaxSettings taxSettings, CatalogSettings catalogSettings,
             StoreInformationSettings storeInformationSettings, EmailAccountSettings emailAccountSettings,
-            CommonSettings commonSettings, BlogSettings blogSettings, 
+            CommonSettings commonSettings, BlogSettings blogSettings,
             NewsSettings newsSettings, ForumSettings forumSettings,
             LocalizationSettings localizationSettings, CaptchaSettings captchaSettings)
         {
@@ -186,22 +186,22 @@ namespace Nop.Web.Controllers
                 var result = _currencyService
                     .GetAllCurrencies(storeId: _storeContext.CurrentStore.Id)
                     .Select(x =>
-                                {
-                                    //currency char
-                                    var currencySymbol = "";
-                                    if (!string.IsNullOrEmpty(x.DisplayLocale))
-                                        currencySymbol = new RegionInfo(x.DisplayLocale).CurrencySymbol;
-                                    else
-                                        currencySymbol = x.CurrencyCode;
-                                    //model
-                                    var currencyModel = new CurrencyModel()
-                                    {
-                                        Id = x.Id,
-                                        Name = x.GetLocalized(y => y.Name),
-                                        CurrencySymbol = currencySymbol
-                                    };
-                                    return currencyModel;
-                                })
+                    {
+                        //currency char
+                        var currencySymbol = "";
+                        if (!string.IsNullOrEmpty(x.DisplayLocale))
+                            currencySymbol = new RegionInfo(x.DisplayLocale).CurrencySymbol;
+                        else
+                            currencySymbol = x.CurrencyCode;
+                        //model
+                        var currencyModel = new CurrencyModel()
+                        {
+                            Id = x.Id,
+                            Name = x.GetLocalized(y => y.Name),
+                            CurrencySymbol = currencySymbol
+                        };
+                        return currencyModel;
+                    })
                     .ToList();
                 return result;
             });
@@ -344,7 +344,7 @@ namespace Nop.Web.Controllers
         {
             return View();
         }
-        
+
         //footer
         [ChildActionOnly]
         public ActionResult JavaScriptDisabledWarning()
@@ -431,6 +431,7 @@ namespace Nop.Web.Controllers
         [ChildActionOnly]
         public ActionResult Menu()
         {
+            var activeCategoryId = 0;
             var model = new MenuModel()
             {
                 RecentlyAddedProductsEnabled = _catalogSettings.RecentlyAddedProductsEnabled,
@@ -438,7 +439,67 @@ namespace Nop.Web.Controllers
                 ForumEnabled = _forumSettings.ForumsEnabled
             };
 
+            var Navmodel = new CategoryNavigationModel()
+            {
+                Categories = PrepareCategoryNavigationModel1(0).ToList()
+            };
+            ViewBag.Cate = Navmodel;
+            ViewBag.CurrentCategoryId = activeCategoryId;
             return PartialView(model);
+        }
+
+        [NonAction]
+        protected IList<CategoryNavigationModel.CategoryModel> PrepareCategoryNavigationModel1(int rootCategoryId)
+        {
+            var result = new List<CategoryNavigationModel.CategoryModel>();
+            foreach (var category in _categoryService.GetAllCategoriesByParentCategoryId(rootCategoryId))
+            {
+                var categoryModel = new CategoryNavigationModel.CategoryModel()
+                {
+                    Id = category.Id,
+                    Name = category.GetLocalized(x => x.Name),
+                    SeName = category.GetSeName()
+                };
+
+                //product number for each category
+                if (_catalogSettings.ShowCategoryProductNumber)
+                {
+                    var categoryIds = new List<int>();
+                    categoryIds.Add(category.Id);
+                    //include subcategories
+                    if (_catalogSettings.ShowCategoryProductNumberIncludingSubcategories)
+                        categoryIds.AddRange(GetChildCategoryIds(category.Id));
+                    categoryModel.NumberOfProducts = _productService
+                        .SearchProducts(categoryIds: categoryIds,
+                        storeId: _storeContext.CurrentStore.Id,
+                        visibleIndividuallyOnly: true,
+                        pageSize: 1)
+                        .TotalCount;
+                }
+                categoryModel.SubCategories.AddRange(PrepareCategoryNavigationModel1(category.Id));
+
+                result.Add(categoryModel);
+            }
+
+            return result;
+        }
+        [NonAction]
+        protected List<int> GetChildCategoryIds(int parentCategoryId, bool showHidden = false)
+        {
+            var customerRolesIds = _workContext.CurrentCustomer.CustomerRoles
+                .Where(cr => cr.Active).Select(cr => cr.Id).ToList();
+            string cacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_CHILD_IDENTIFIERS_MODEL_KEY, parentCategoryId, showHidden, string.Join(",", customerRolesIds), _storeContext.CurrentStore.Id);
+            return _cacheManager.Get(cacheKey, () =>
+            {
+                var categoriesIds = new List<int>();
+                var categories = _categoryService.GetAllCategoriesByParentCategoryId(parentCategoryId, showHidden);
+                foreach (var category in categories)
+                {
+                    categoriesIds.Add(category.Id);
+                    categoriesIds.AddRange(GetChildCategoryIds(category.Id, showHidden));
+                }
+                return categoriesIds;
+            });
         }
 
         //info block
@@ -504,8 +565,8 @@ namespace Nop.Web.Controllers
                 {
                     from = emailAccount.Email;
                     fromName = emailAccount.DisplayName;
-                    body = string.Format("<strong>From</strong>: {0} - {1}<br /><br />{2}", 
-                        Server.HtmlEncode(fullName), 
+                    body = string.Format("<strong>From</strong>: {0} - {1}<br /><br />{2}",
+                        Server.HtmlEncode(fullName),
                         Server.HtmlEncode(email), body);
                 }
                 else
@@ -525,7 +586,7 @@ namespace Nop.Web.Controllers
                     CreatedOnUtc = DateTime.UtcNow,
                     EmailAccountId = emailAccount.Id
                 });
-                
+
                 model.SuccessfullySent = true;
                 model.Result = _localizationService.GetResource("ContactUs.YourEnquiryHasBeenSent");
 
@@ -560,7 +621,7 @@ namespace Nop.Web.Controllers
             if (_commonSettings.SitemapIncludeProducts)
             {
                 //limit product to 200 until paging is supported on this page
-                var products = _productService.SearchProducts(storeId: _storeContext.CurrentStore.Id, 
+                var products = _productService.SearchProducts(storeId: _storeContext.CurrentStore.Id,
                     visibleIndividuallyOnly: true,
                     pageSize: 200);
                 model.Products = products.Select(product => new ProductOverviewModel()
@@ -632,7 +693,7 @@ namespace Nop.Web.Controllers
         public ActionResult StoreThemeSelected(string themeName)
         {
             _themeContext.WorkingDesktopTheme = themeName;
-            
+
             var model = new StoreThemeSelectorModel();
             var currentTheme = _themeProvider.GetThemeConfiguration(_themeContext.WorkingDesktopTheme);
             model.CurrentStoreTheme = new StoreThemeModel()
@@ -664,7 +725,7 @@ namespace Nop.Web.Controllers
                 Uploaded = System.IO.File.Exists(System.IO.Path.Combine(Request.PhysicalApplicationPath, "favicon.ico")),
                 FaviconUrl = _webHelper.GetStoreLocation() + "favicon.ico"
             };
-            
+
             return PartialView(model);
         }
 
@@ -696,7 +757,7 @@ namespace Nop.Web.Controllers
 
             return View();
         }
-        
+
         //EU Cookie law
         [ChildActionOnly]
         public ActionResult EuCookieLaw()

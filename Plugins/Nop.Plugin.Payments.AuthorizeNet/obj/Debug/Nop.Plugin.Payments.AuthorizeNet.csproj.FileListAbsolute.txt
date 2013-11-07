@@ -4,3 +4,4 @@ D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.
 D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.pdb
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.dll
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.csprojResolveAssemblyReference.cache

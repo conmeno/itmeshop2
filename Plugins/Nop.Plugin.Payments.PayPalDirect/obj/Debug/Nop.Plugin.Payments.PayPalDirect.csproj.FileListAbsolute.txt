@@ -4,3 +4,4 @@ D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.
 D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.pdb
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.dll
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csprojResolveAssemblyReference.cache

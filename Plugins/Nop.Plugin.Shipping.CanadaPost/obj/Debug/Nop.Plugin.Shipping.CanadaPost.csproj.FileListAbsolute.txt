@@ -3,3 +3,4 @@ D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Shipping.CanadaPost\Nop.Plugin.Sh
 D:\itme\itmeshop2\Presentation\Nop.Web\Plugins\Shipping.CanadaPost\Nop.Plugin.Shipping.CanadaPost.pdb
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.dll
 D:\itme\itmeshop2\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.pdb
+D:\itme\itmeshop2\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.csprojResolveAssemblyReference.cache
