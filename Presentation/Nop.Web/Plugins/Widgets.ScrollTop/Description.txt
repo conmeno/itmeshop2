@@ -1,0 +1,8 @@
+Group: Widgets
+FriendlyName: Scroll to the top
+SystemName: Widgets.ScrollTop
+Version: 1.00
+SupportedVersions: 3.00,3.10,3.20
+Author: hezy ziv
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.ScrollTop.dll

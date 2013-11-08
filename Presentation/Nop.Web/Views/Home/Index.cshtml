@@ -3,11 +3,23 @@
 }
 <div class="page home-page">
     <div class="page-body">
-        @Html.Widget("home_page_top")
+        <div>
+            <div style="float: left; width: 715px;">
+
+                @Html.Widget("home_page_top")
+            </div>
+            <div style="float: left; width: 350px;padding-left:10px;">
+                @Html.Action("NewsletterBox", "Newsletter")
+                @Html.Action("RecentlyViewedProductsBlock", "Catalog", new { productThumbPictureSize = 32 })
+            </div>
+            <div style="clear: both;"></div>
+
+        </div>
         @Html.Action("TopicBlock", "Topic", new { systemName = "HomePageText" })
-        @Html.Action("HomepageCategories", "Catalog")
+      
         @Html.Action("HomepageProducts", "Catalog")
         @Html.Action("HomepageBestSellers", "Catalog")
+          @Html.Action("HomepageCategories", "Catalog")
         @Html.Action("HomePageNews", "News")
         @Html.Action("HomePagePolls", "Poll")
         @Html.Widget("home_page_bottom")

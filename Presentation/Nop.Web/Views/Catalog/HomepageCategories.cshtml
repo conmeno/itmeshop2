@@ -21,4 +21,36 @@
             </div>
         }
     </div>
+    
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="product-grid home-page-product-grid">
+
+                <div class="item-box">
+                    <div class="category-item">
+                        <h2 class="title">
+                            <a href="@Url.RouteUrl("Category", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                @item.Name</a>
+                        </h2>
+                        <div class="picture">
+                            <a href="@Url.RouteUrl("Category", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl"
+                                    title="@item.PictureModel.Title" /></a>
+                        </div>
+                    </div>
+                </div>
+                @if (item.Products.Count > 0)
+                {
+
+                    foreach (var item1 in item.Products)
+                    {
+                    <div class="item-box">
+                        @Html.Partial("_ProductBox", item1)
+                    </div>
+                    }
+                }
+            </div>
+        }
+    </div>
 }

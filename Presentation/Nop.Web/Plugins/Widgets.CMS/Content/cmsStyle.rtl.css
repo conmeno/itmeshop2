@@ -1,0 +1,12 @@
+﻿.mm-content{margin:10px;}
+.mm-drop-window {position: absolute;background-color: #404040;z-index: 500;display: none;right: 0; width: 100%; margin-top:7px;min-height:100px;
+                 border-radius:4px;-o-border-radius:4px;-icab-border-radius:4px;-khtml-border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;
+             -moz-border-radius:4px;}
+.mm-link-box {float:right;width:155px;background-color:#484848;margin:5px;padding:5px; }
+.mm-link-box a {line-height:24px; }
+    .mm-link-box a:hover {color:#b3b0b0; }
+.top-menu { position:relative;}
+
+.main-link-box {float:right;width:155px;margin:5px; padding:10px; font-size:12px;line-height:18px;}
+.main-link-box ul{margin:0;padding:0 0 0 2px;color:#5C5B5B;}
+.main-link-box li{list-style:none outside none;line-height:18px;padding:4px 1px 3px 13px;}
