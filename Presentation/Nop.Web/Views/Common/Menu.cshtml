@@ -115,7 +115,6 @@
                 z-index: 1009;
                 position: relative;
                 font-weight: bold;
-                
             }
 
             #menu > ul > li:hover > a {
@@ -334,8 +333,8 @@
 
             </div>
         </li>
-       
-        <li><a target="_blank" href="#">Menus</a>
+
+        @*<li><a target="_blank" href="#">Menus</a>
             <div>
                 <ul>
                     <li><a href="index-2.html">Horizontal Categories</a></li>
@@ -343,40 +342,32 @@
                     <li><a href="header-footer-3.html">Simple Categories</a></li>
                 </ul>
             </div>
-        </li> 
+        </li>*@
         <li><a href="#">Custom Block</a>
             <div class="custom_block">
                 <ul>
                     <li>
-                        <table border="0" cellpadding="0" cellspacing="0" style="width: 500px;">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <h3>You can insert any content here.</h3>
-                                        <p>&nbsp;</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>
-                                        <img alt="responsive" src="image/product/responsive.jpg" style="width: 250px; height: 150px; border-width: 0px; border-style: solid; float: left; margin-left: 10px; margin-right: 10px;" />Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div>
+                            
+                            <a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })"><img src="/content/images/freeship.jpg" /></a>
+                            </div>
                     </li>
                 </ul>
             </div>
         </li>
-       
-        <li><a>Information</a>
+
+        <li><a>Thông tin</a>
             <div>
                 <ul>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="about-us.html">Delivery Information</a></li>
-                    <li><a href="about-us.html">Privacy Policy</a></li>
-                    <li><a href="elements.html">Elements</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new { SystemName = "conditionsofUse" })">@T("ConditionsOfUse")</a></li>
                 </ul>
             </div>
         </li>
+
+        <li><a href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
+
         @if (Model.RecentlyAddedProductsEnabled)
         {
             <li><a href="@Url.RouteUrl("RecentlyAddedProducts")">@T("Products.NewProducts")</a>
@@ -393,6 +384,9 @@
             <li><a href="@Url.RouteUrl("Boards")">@T("Forum.Forums")</a></li>
         }
         <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
+
+        <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+
         @Html.Widget("header_menu_after")
     </ul>
 </nav>

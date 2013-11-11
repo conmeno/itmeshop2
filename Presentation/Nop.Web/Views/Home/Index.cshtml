@@ -9,6 +9,7 @@
                 @Html.Widget("home_page_top")
             </div>
             <div style="float: left; width: 350px;padding-left:10px;">
+                @Html.Action("HomePageNews", "News")
                 @Html.Action("NewsletterBox", "Newsletter")
                 @Html.Action("RecentlyViewedProductsBlock", "Catalog", new { productThumbPictureSize = 32 })
             </div>
@@ -19,8 +20,7 @@
       
         @Html.Action("HomepageProducts", "Catalog")
         @Html.Action("HomepageBestSellers", "Catalog")
-          @Html.Action("HomepageCategories", "Catalog")
-        @Html.Action("HomePageNews", "News")
+          @Html.Action("HomepageCategories", "Catalog") 
         @Html.Action("HomePagePolls", "Poll")
         @Html.Widget("home_page_bottom")
     </div>

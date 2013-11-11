@@ -49,13 +49,13 @@
 }
 @if (Model.Categories.Count > 0)
 {
-    <div class="block block-category-navigation">
-        <div class="title">
+    <div class="block2 block-category-navigation">
+       @* <div class="title">
             <strong>@T("Categories")</strong>
-        </div>
+        </div>*@
         <div>
             @*<ul class="list">*@
-            <ul id="main-menu" class="sm sm-vertical sm-blue sm-blue-vertical">
+            <ul id="main-menu" class="sm sm-vertical sm-simple sm-simple-vertical">
                 @foreach (var category in Model.Categories)
                 {
                     @RenderCategoryLine(category)

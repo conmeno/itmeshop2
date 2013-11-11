@@ -3,6 +3,7 @@
 <div class="header-links">
     <ul>
         @Html.Widget("header_links_before")
+        <li>HOTLINE: HCM (08) 8880888 - HN (04) 222 1188</li>
         @if (Model.IsAuthenticated)
         {
             <li><a href="@Url.RouteUrl("CustomerInfo")" class="account">@Model.CustomerEmailUsername</a></li>
