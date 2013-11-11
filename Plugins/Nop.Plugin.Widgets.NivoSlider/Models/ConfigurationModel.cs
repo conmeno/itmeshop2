@@ -61,5 +61,51 @@ namespace Nop.Plugin.Widgets.NivoSlider.Models
         [AllowHtml]
         public string Link4 { get; set; }
         public bool Link4_OverrideForStore { get; set; }
+
+
+
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Picture")]
+        [UIHint("Picture")]
+        public int Picture5Id { get; set; }
+        public bool Picture5Id_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Text")]
+        [AllowHtml]
+        public string Text5 { get; set; }
+        public bool Text5_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Link")]
+        [AllowHtml]
+        public string Link5 { get; set; }
+        public bool Link5_OverrideForStore { get; set; }
+
+
+
+
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Picture")]
+        [UIHint("Picture")]
+        public int Picture6Id { get; set; }
+        public bool Picture6Id_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Text")]
+        [AllowHtml]
+        public string Text6 { get; set; }
+        public bool Text6_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Link")]
+        [AllowHtml]
+        public string Link6 { get; set; }
+        public bool Link6_OverrideForStore { get; set; }
+
+
+
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Picture")]
+        [UIHint("Picture")]
+        public int Picture7Id { get; set; }
+        public bool Picture7Id_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Text")]
+        [AllowHtml]
+        public string Text7 { get; set; }
+        public bool Text7_OverrideForStore { get; set; }
+        [NopResourceDisplayName("Plugins.Widgets.NivoSlider.Link")]
+        [AllowHtml]
+        public string Link7 { get; set; }
+        public bool Link7_OverrideForStore { get; set; }
     }
 }

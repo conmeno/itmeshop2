@@ -26,6 +26,6 @@ Mobile.SMS.Verizon
 Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
-Widgets.NivoSlider
 Widgets.CMS
 Widgets.ScrollTop
+Widgets.NivoSlider
