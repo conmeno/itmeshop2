@@ -1,2 +1,2 @@
 DataProvider: sqlserver
-DataConnectionString: Data Source=.;Initial Catalog=itmeshop2;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=phone7gil;MultipleActiveResultSets=True
+DataConnectionString: Data Source=123.30.187.4;Initial Catalog=izhshbvj_itmeshop;Integrated Security=False;Persist Security Info=False;User ID=izhshbvj_itmeshop;Password=chochet2009;MultipleActiveResultSets=True
