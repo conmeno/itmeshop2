@@ -230,7 +230,7 @@
             }
 
                 #menu > ul > li div > ul > li > a:hover {
-                    background: url(../image/bullet-1.png) right center no-repeat;
+                    /*background: url(../image/bullet-1.png) right center no-repeat;*/
                     color: #d45c93;
                 }
 
@@ -295,7 +295,7 @@
     <ul>
         @Html.Widget("header_menu_before")
         <li class="home"><a title="Home" href="@Url.RouteUrl("HomePage")"><span>@T("HomePage")</span></a></li>
-        <li class="categories_hor"><a>Tất cả danh mục</a>
+        <li class="categories_hor"><a style="background-color:orange">Tất cả danh mục</a>
             <div>
 
 
@@ -357,7 +357,7 @@
             </div>
         </li>
 
-        <li><a>Thông tin</a>
+        <li><a style="background-color:#E84C3D">Thông tin</a>
             <div>
                 <ul>
                     <li><a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a></li>
@@ -367,7 +367,7 @@
             </div>
         </li>
 
-        <li><a href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
+        <li><a style="background-color:#2DCC70" href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
 
         @if (Model.RecentlyAddedProductsEnabled)
         {
@@ -386,7 +386,7 @@
         }
         <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
 
-        <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+        <li><a style="background-color:#E51400" href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
 
         @Html.Widget("header_menu_after")
     </ul>

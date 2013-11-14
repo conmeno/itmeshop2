@@ -3,16 +3,16 @@
 <div class="header-links">
     <ul>
         @Html.Widget("header_links_before")
-        <li>HOTLINE: HCM (08) 8880888 - HN (04) 222 1188</li>
+       @* <li>HOTLINE: HCM (08) 8880888 - HN (04) 222 1188</li>*@
         @if (Model.IsAuthenticated)
         {
             <li><a href="@Url.RouteUrl("CustomerInfo")" class="account">@Model.CustomerEmailUsername</a></li>
-            <li><a href="@Url.RouteUrl("Logout")" class="ico-logout">@T("Account.Logout")</a></li>
+            <li><a href="@Url.RouteUrl("Logout")" class="ico-logout btn btn-primary">@T("Account.Logout")</a></li>
         }
         else
         {
-            <li><a href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></li>
-            <li><a href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></li>
+            <li><a href="@Url.RouteUrl("Register")" class="ico-register btn btn-primary">@T("Account.Register")</a></li>
+            <li><a href="@Url.RouteUrl("Login")" class="ico-login btn btn-primary">@T("Account.Login")</a></li>
         }
         @if (Model.AllowPrivateMessages)
         {
@@ -30,7 +30,7 @@
         @if (Model.ShoppingCartEnabled)
         {
             <li id="topcartlink">
-                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart">
+                <a href="@Url.RouteUrl("ShoppingCart")" class="ico-cart btn btn-primary">
                     <span class="cart-label">@T("ShoppingCart")</span>
                     <span class="cart-qty">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
                 </a>
@@ -39,7 +39,7 @@
         @if (Model.WishlistEnabled)
         {
             <li>
-                <a href="@Url.RouteUrl("Wishlist")" class="ico-wishlist">
+                <a href="@Url.RouteUrl("Wishlist")" class="ico-wishlist btn btn-primary">
                     <span class="cart-label">@T("Wishlist")</span>
                     <span class="wishlist-qty">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
                 </a>

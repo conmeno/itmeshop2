@@ -1,6 +1,28 @@
 ﻿@{
     Layout = "~/Views/Shared/_Itmeshop.cshtml";
 }
+<style>
+    .thumbnail p
+    {
+        color: #fff;
+        font-size: 20px;
+    }
+    .thumbnail.tile
+    {
+        opacity:1;
+        margin-bottom:0;
+        height:110px; 
+    }
+     .thumbnail.tile:hover
+    {
+        opacity:0.75;
+      
+    }
+    .thumbnail.tile.tile-double
+    {
+        width:340px;
+    }
+</style>
 <div class="page home-page">
     <div class="page-body">
         <div>
@@ -12,24 +34,26 @@
                 @*@Html.Action("HomePageNews", "News")*@
                 @* @Html.Action("NewsletterBox", "Newsletter")*@
                 @*@Html.Action("RecentlyViewedProductsBlock", "Catalog", new { productThumbPictureSize = 32 })*@
-                <div class="thumbnail tile tile-teal">
+
+                <div class="thumbnail tile tile-double tile-teal" style="background-color:#EC4F13;">
                     <a href="#">
-                        <h1>Hello</h1>
+                        <img src="/content/images/pay.png" />
+                        <p>Thanh toán khi nhận hàng</p>
+                    </a>
+                </div>
+               
+                <div class="thumbnail tile tile-double" style="background-color:#8CBF26;">
+                    <a href="#">
+                        <img src="/content/images/turn.png" />
+                        <p>Trả hàng trong vòng 7 ngày</p>
                     </a>
                 </div>
 
 
-                <div class="thumbnail tile">
-                    <a href="#"> 
-                        <h2>Tweet
-                        </h2>
-                    </a>
-                </div>
-
-
-                <div class="thumbnail tile tile-double tile-orange">
+                <div class="thumbnail tile tile-double tile-orange" style="background-color:#009cea;">
                     <a href="#">
-                        <h1 class="tile-text">I'm the 2!</h1>
+                        <img src="/content/images/delivery.png" />
+                        <p>Giao hàng miển phí tại HCM</p>
                     </a>
                 </div>
             </div>
