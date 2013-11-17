@@ -67,7 +67,7 @@
     }
 
     #menu {
-        background: #1F9ED8;
+        background: #7CBB00;
         margin: 15px 0px;
         height: 40px;
         padding: 0px 0px 0px 3px;
@@ -151,7 +151,7 @@
             #menu > ul > li.categories_hor > div {
                 display: none;
                 background: #fff;
-                min-width: 895px;
+                min-width: 1095px;
                 position: absolute;
                 z-index: 1008;
                 padding: 10px 10px 0px 10px;
@@ -166,7 +166,7 @@
             #menu > ul > li.categories_hor > div > .column {
                 position: relative;
                 display: inline-block;
-                width: 160px;
+                width: 120px;
                 margin: 0 15px 15px 0px;
             }
 
@@ -311,8 +311,16 @@
                             <ul>
                                 @if (category.SubCategories.Count > 0)
                                 {
+                                    int i=0;
                                     foreach (var subCategory in category.SubCategories)
                                     {
+                                        if(i>5)
+                                        {
+                                            <li><a style="color:blue;" href="@Url.RouteUrl("Category", new { SeName = category.SeName })">Xem tất cả</a></li>
+                                            break;
+                                        }
+                                        i++;
+                                        
                                     <li><a href="@Url.RouteUrl("Category", new { SeName = subCategory.SeName })">@subCategory.Name
                                         @if (category.NumberOfProducts.HasValue)
                                         {
@@ -344,7 +352,7 @@
                 </ul>
             </div>
         </li>*@
-        <li><a href="#">Custom Block</a>
+       @* <li><a href="#">Custom Block</a>
             <div class="custom_block">
                 <ul>
                     <li>
@@ -355,9 +363,9 @@
                     </li>
                 </ul>
             </div>
-        </li>
+        </li>*@
 
-        <li><a style="background-color:#E84C3D">Thông tin</a>
+        <li><a style="background-color:#7cbb00">Thông tin</a>
             <div>
                 <ul>
                     <li><a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a></li>
@@ -367,7 +375,7 @@
             </div>
         </li>
 
-        <li><a style="background-color:#2DCC70" href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
+        <li><a style="background-color:#E51400" href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
 
         @if (Model.RecentlyAddedProductsEnabled)
         {
@@ -386,7 +394,7 @@
         }
         <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
 
-        <li><a style="background-color:#E51400" href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+        <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
 
         @Html.Widget("header_menu_after")
     </ul>

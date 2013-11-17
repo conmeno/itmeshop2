@@ -20,45 +20,45 @@
     }
     .thumbnail.tile.tile-double
     {
-        width:340px;
+        width:100%;
     }
 </style>
 <div class="page home-page">
     <div class="page-body">
-        <div>
-            <div style="float: left; width: 715px;">
-
+        <div class="row">
+        
+            <div class="col-md-8">
+            
                 @Html.Widget("home_page_top")
             </div>
-            <div style="float: left; width: 350px; padding-left: 10px;">
+            <div class="col-md-4">
                 @*@Html.Action("HomePageNews", "News")*@
                 @* @Html.Action("NewsletterBox", "Newsletter")*@
                 @*@Html.Action("RecentlyViewedProductsBlock", "Catalog", new { productThumbPictureSize = 32 })*@
 
-                <div class="thumbnail tile tile-double tile-teal" style="background-color:#EC4F13;">
-                    <a href="#">
+                <div class="thumbnail tile tile-double tile-teal" style="background-color:#E51400;">
+                    <a href="@Url.RouteUrl("Topic", new { SystemName = "paymentinfo" })">
                         <img src="/content/images/pay.png" />
                         <p>Thanh toán khi nhận hàng</p>
                     </a>
                 </div>
                
-                <div class="thumbnail tile tile-double" style="background-color:#8CBF26;">
-                    <a href="#">
+                <div class="thumbnail tile tile-double" style="background-color:#7cbb00;">
+                    <a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
                         <img src="/content/images/turn.png" />
                         <p>Trả hàng trong vòng 7 ngày</p>
                     </a>
                 </div>
 
 
-                <div class="thumbnail tile tile-double tile-orange" style="background-color:#009cea;">
-                    <a href="#">
+                <div class="thumbnail tile tile-double tile-orange" style="background-color:#FFA500;">
+                    <a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
                         <img src="/content/images/delivery.png" />
                         <p>Giao hàng miển phí tại HCM</p>
                     </a>
                 </div>
             </div>
-            <div style="clear: both;"></div>
-
+           
         </div>
         @Html.Action("TopicBlock", "Topic", new { systemName = "HomePageText" })
 

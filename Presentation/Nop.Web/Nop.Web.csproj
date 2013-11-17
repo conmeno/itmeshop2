@@ -940,6 +940,7 @@
     <Content Include="Scripts\public.common.mobile.js" />
     <Content Include="Themes\DefaultClean\Content\images\star-x-active.png" />
     <Content Include="Themes\DefaultClean\Content\images\star-x-inactive.png" />
+    <Content Include="Themes\Itme\Content\itme.css" />
     <Content Include="Themes\Itme\Content\ie6.css" />
     <Content Include="Themes\Itme\Content\ie7.css" />
     <Content Include="Themes\Itme\Content\images\ajax_loader_large.gif" />

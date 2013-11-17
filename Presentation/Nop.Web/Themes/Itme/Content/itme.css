@@ -1,0 +1,283 @@
+﻿.center-1
+{
+    background:#FFF;display:inline;border-radius:5px;
+}
+.center-2
+{
+}
+.side-2,.leftside-3,.rightside-3
+{
+    padding:0 0!important;
+}
+.master-wrapper-page
+{
+    background-color:#000;
+}
+.container
+{
+    background:#fff;
+    padding:0 30px!important;
+}
+
+.btn-cart
+{
+    color:#fff;
+    background-color:#7CBB00;
+    border-color:#2CBB00;
+    font-weight:bold!important;
+
+}
+    
+.header-links ul li a
+{
+    font-weight:bold;
+}
+.header-links ul li a:hover
+{
+    color:#fff;
+     text-decoration:none;
+}
+.socialmedia
+{ 
+    display: inline-block;
+}
+
+    .socialmedia span
+    {
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .socialmedia ul
+    {
+        display: inline-block;
+        vertical-align: middle;
+        list-style-type: none;
+    }
+
+    .socialmedia li
+    {
+        float: left;
+    }
+
+.social, .social:hover
+{
+    width: 30px;
+    height: 30px;
+    background: url(/content/images/media.jpg) top no-repeat;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.facebook
+{
+    background-position: -4px -2px;
+}
+
+    .facebook:hover
+    {
+        background-position: -4px -36px;
+    }
+
+.google
+{
+    background-position: -37px -2px;
+}
+
+    .google:hover
+    {
+        background-position: -37px -36px;
+    }
+
+.youtube
+{
+    background-position: -69px -2px;
+}
+
+    .youtube:hover
+    {
+        background-position: -69px -36px;
+    }
+
+.pinterest
+{
+    background-position: -100px -2px;
+}
+
+    .pinterest:hover
+    {
+        background-position: -100px -36px;
+    }
+
+.twitter
+{
+    background-position: -132px -2px;
+}
+
+    .twitter:hover
+    {
+        background-position: -132px -36px;
+    }
+
+.linkedin
+{
+    background-position: -165px -2px;
+}
+
+    .linkedin:hover
+    {
+        background-position: -165px -36px;
+    }
+
+.tumblr
+{
+    background-position: -198px -2px;
+}
+
+    .tumblr:hover
+    {
+        background-position: -198px -36px;
+    }
+
+.zing
+{
+    background-position: -230px -2px;
+}
+
+    .zing:hover
+    {
+        background-position: -230px -36px;
+    }
+
+.blog
+{
+    background-position: -263px -2px;
+}
+
+    .blog:hover
+    {
+        background-position: -263px -36px;
+    }
+
+
+
+/*paymetn icon*/
+.payment-list
+{
+    padding: 0;
+margin: 0;
+list-style: none;
+}
+
+.pay-icon
+{
+    background: url(/content/images/payment.png) no-repeat;
+    width: 60px;
+    height: 44px;
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+.ipayCIMB
+{
+    background-position: -4px -2px;
+}
+
+.ipaySevenEleven
+{
+    background-position: -4px -50px;
+}
+
+.ipayAlliance
+{
+    background-position: -4px -146px;
+}
+
+.ipayAmBank
+{
+    background-position: -4px -195px;
+}
+
+.ipayBCA
+{
+    background-position: -4px -242px;
+}
+
+.ipayMandiri
+{
+    background-position: -4px -290px;
+}
+
+.ipayFPX
+{
+    background-position: -4px -339px;
+}
+
+.ipayHongLeong
+{
+    background-position: -4px -387px;
+}
+
+.ipayMaster
+{
+    background-position: -4px -435px;
+}
+
+.ipayMaybank
+{
+    background-position: -4px -484px;
+}
+
+.ipayRHB
+{
+    background-position: -4px -532px;
+}
+
+.ipayVisa
+{
+    background-position: -4px -580px;
+}
+
+.ipayPayPal
+{
+    background-position: -4px -629px;
+}
+
+.ipayMegalink
+{
+    background-position: -4px -677px;
+}
+
+.ipayBNI
+{
+    background-position: -4px -725px;
+}
+
+.ipayCOD
+{
+    background-position: -4px -822px;
+}
+
+.ipayCardDefault
+{
+    background-position: -4px -870px;
+}
+
+.ipayBDO
+{
+    background-position: -4px -919px;
+}
+
+.i-socFacebook, .i-socTwitter, .i-socGooglePlus, .i-flagMalaysia, .i-flagThailand, .i-flagVietnam
+{
+    display: block;
+    width: 50%;
+}
+
+.i-socFacebook, .i-socTwitter, .i-socGooglePlus, .i-socialLinkedInLogo, .i-socYoutube, .i-socZingMe, .i-socPinterest, .i-socBlog, .i-socInstagram, .i-socTumblr
+{
+    background: url(http://static-02.lazada.vn/images/spinbasket/sprites/sprite_social.png.pagespeed.ce.bVMCom6Dzq.png) no-repeat top left;
+    height: 32px;
+}

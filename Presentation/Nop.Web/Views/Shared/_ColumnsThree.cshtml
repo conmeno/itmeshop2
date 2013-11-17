@@ -29,7 +29,7 @@
     }
 }
 
-<div class="leftside-3">
+<div class="leftside-3 col-md-3">
     @if (IsSectionDefined("left"))
     {
         @RenderSection("left")
@@ -45,12 +45,12 @@
         @Html.Widget("left_side_column_after")
     }
 </div>
-<div class="center-3">
+<div class="center-3 col-md-6">
     @Html.Widget("main_column_before")
     @RenderBody()
     @Html.Widget("main_column_after")
 </div>
-<div class="rightside-3">
+<div class="rightside-3 col-md-3">
     @if (IsSectionDefined("right"))
     {
         @RenderSection("right")

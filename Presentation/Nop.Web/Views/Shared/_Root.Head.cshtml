@@ -18,6 +18,7 @@
 
 
     Html.AppendCssFileParts("~/Content/metro_bootstrap/metro-bootstrap.css");
+    Html.AppendCssFileParts("~//Themes/Itme/Content/itme.css");
   
     
 }
@@ -45,14 +46,17 @@
     }
     <!--Powered by nopCommerce - http://www.nopCommerce.com-->
     <!--Copyright (c) 2008-2013-->
-   
+   <style>
+
+
+   </style>
 </head>
 <body>
     @RenderBody()
     @Html.NopCssFiles(this.Url, ResourceLocation.Foot)
     @Html.NopScripts(this.Url, ResourceLocation.Foot)
      <script type="text/javascript">
-         $.backstretch("/Themes/Itme/Content/images/bg/bg6.png");
+        // $.backstretch("/Themes/Itme/Content/images/bg/bg8.jpg");
      //    $.backstretch([
      //"/Themes/Itme/Content/images/bg/bg6.png", "/Themes/Itme/Content/images/bg/bg8.jpg", "/Themes/Itme/Content/images/bg/bg1.jpg"
     

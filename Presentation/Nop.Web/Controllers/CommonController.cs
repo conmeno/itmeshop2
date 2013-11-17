@@ -431,6 +431,14 @@ namespace Nop.Web.Controllers
         [ChildActionOnly]
         public ActionResult Menu()
         {
+
+            var language = _languageService.GetLanguageById(2);
+            if (language != null && language.Published)
+            {
+                _workContext.WorkingLanguage = language;
+            }
+
+
             var activeCategoryId = 0;
             var model = new MenuModel()
             {
