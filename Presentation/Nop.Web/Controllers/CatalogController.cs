@@ -1190,8 +1190,10 @@ namespace Nop.Web.Controllers
 
             var customerRolesIds = _workContext.CurrentCustomer.CustomerRoles
                 .Where(cr => cr.Active).Select(cr => cr.Id).ToList();
-            string cacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_NAVIGATION_MODEL_KEY, _workContext.WorkingLanguage.Id,
-                string.Join(",", customerRolesIds), _storeContext.CurrentStore.Id, activeCategoryId);
+            //string cacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_NAVIGATION_MODEL_KEY, _workContext.WorkingLanguage.Id,
+            //    string.Join(",", customerRolesIds), _storeContext.CurrentStore.Id, activeCategoryId);
+
+            string cacheKey = "ITME_TOP_MENU";
             var cachedModel = _cacheManager.Get(cacheKey, () =>
                 {
                     var breadCrumb = activeCategory != null ?
