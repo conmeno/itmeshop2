@@ -446,20 +446,53 @@ namespace Nop.Web.Controllers
                 BlogEnabled = _blogSettings.Enabled,
                 ForumEnabled = _forumSettings.ForumsEnabled
             };
+            
+            //var Navmodel = new CategoryNavigationModel()
+            //{
+            //    Categories = PrepareCategoryNavigationModel1(0).ToList()
+            //};
 
-            var Navmodel = new CategoryNavigationModel()
+
+
+
+            //var activeCategory = _categoryService.GetCategoryById(currentCategoryId);
+            //if (activeCategory == null && currentProductId > 0)
+            //{
+            //    var productCategories = _categoryService.GetProductCategoriesByProductId(currentProductId);
+            //    if (productCategories.Count > 0)
+            //        activeCategory = productCategories[0].Category;
+            //}
+            //var activeCategoryId = activeCategory != null ? activeCategory.Id : 0;
+
+            var customerRolesIds = _workContext.CurrentCustomer.CustomerRoles
+                .Where(cr => cr.Active).Select(cr => cr.Id).ToList();
+            //string cacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_NAVIGATION_MODEL_KEY, _workContext.WorkingLanguage.Id,
+            //    string.Join(",", customerRolesIds), _storeContext.CurrentStore.Id,"concat");
+            string cacheKey = "ITME_TOP_MENU";
+            var cachedModel = _cacheManager.Get(cacheKey, () =>
             {
-                Categories = PrepareCategoryNavigationModel1(0).ToList()
-            };
+                 
+                return new CategoryNavigationModel()
+                {
+                    Categories = PrepareCategoryNavigationModel1(0).ToList()
+                };
+            }
+            ); 
+
+
+
+            var Navmodel = (CategoryNavigationModel)cachedModel.Clone(); 
+
             ViewBag.Cate = Navmodel;
             ViewBag.CurrentCategoryId = activeCategoryId;
             return PartialView(model);
         }
 
         [NonAction]
-        protected IList<CategoryNavigationModel.CategoryModel> PrepareCategoryNavigationModel1(int rootCategoryId)
+        protected IList<CategoryNavigationModel.CategoryModel> PrepareCategoryNavigationModel1(int rootCategoryId, int stop = -1)
         {
             var result = new List<CategoryNavigationModel.CategoryModel>();
+            int i = 0;
             foreach (var category in _categoryService.GetAllCategoriesByParentCategoryId(rootCategoryId))
             {
                 var categoryModel = new CategoryNavigationModel.CategoryModel()
@@ -483,8 +516,8 @@ namespace Nop.Web.Controllers
                         visibleIndividuallyOnly: true,
                         pageSize: 1)
                         .TotalCount;
-                }
-                categoryModel.SubCategories.AddRange(PrepareCategoryNavigationModel1(category.Id));
+                }           
+                    categoryModel.SubCategories.AddRange(PrepareCategoryNavigationModel1(category.Id, 0));
 
                 result.Add(categoryModel);
             }
