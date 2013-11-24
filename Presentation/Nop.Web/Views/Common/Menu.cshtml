@@ -295,7 +295,7 @@
     <ul>
         @Html.Widget("header_menu_before")
         <li class="home"><a title="Home" href="@Url.RouteUrl("HomePage")"><span>@T("HomePage")</span></a></li>
-        <li class="categories_hor"><a style="background-color:orange">Tất cả danh mục</a>
+        <li class="categories_hor"><a href="#" style="background-color:orange">Danh mục sản phẩm</a>
             <div>
 
 
@@ -314,7 +314,7 @@
                                     int i=0;
                                     foreach (var subCategory in category.SubCategories)
                                     {
-                                        if(i>5)
+                                        if(i>4)
                                         {
                                             <li><a style="color:blue;" href="@Url.RouteUrl("Category", new { SeName = category.SeName })">Xem tất cả</a></li>
                                             break;
@@ -368,6 +368,7 @@
         <li><a style="background-color:#7cbb00">Thông tin</a>
             <div>
                 <ul>
+                    <li><a href="http://itme.vn">Giới thiệu</a></li>
                     <li><a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a></li>
                     <li><a href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a></li>
                     <li><a href="@Url.RouteUrl("Topic", new { SystemName = "conditionsofUse" })">@T("ConditionsOfUse")</a></li>
@@ -375,14 +376,14 @@
             </div>
         </li>
 
-        <li><a style="background-color:#E51400" href="@Url.RouteUrl("NewsArchive")">Tin khuyến mãi</a></li>
+        <li><a style="background-color:#E51400" href="@Url.RouteUrl("NewsArchive")">@T("news")</a></li>
 
         @if (Model.RecentlyAddedProductsEnabled)
         {
             <li><a href="@Url.RouteUrl("RecentlyAddedProducts")">@T("Products.NewProducts")</a>
             </li>
         }
-        <li><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a> </li>
+      @*  <li><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a> </li>*@
         <li><a href="@Url.RouteUrl("CustomerInfo")">@T("Account.MyAccount")</a></li>
         @if (Model.BlogEnabled)
         {
@@ -394,7 +395,7 @@
         }
         <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
 
-        <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+        @*<li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>*@
 
         @Html.Widget("header_menu_after")
     </ul>

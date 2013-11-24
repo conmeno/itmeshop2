@@ -1255,7 +1255,7 @@ namespace Nop.Web.Controllers
                         storeId: _storeContext.CurrentStore.Id,
                         visibleIndividuallyOnly: true,
                         pageIndex: 0,
-                        pageSize: 5);
+                        pageSize: 12);
                     catModel.Products = PrepareProductOverviewModels(products).ToList(); 
 
 

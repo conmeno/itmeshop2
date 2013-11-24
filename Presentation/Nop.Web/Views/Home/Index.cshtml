@@ -5,13 +5,13 @@
     .thumbnail p
     {
         color: #fff;
-        font-size: 20px;
+        font-size: 18px;
     }
     .thumbnail.tile
     {
         opacity:1;
         margin-bottom:0;
-        height:116px; 
+        height:88px; 
     }
      .thumbnail.tile:hover
     {
@@ -37,26 +37,35 @@
                 @*@Html.Action("RecentlyViewedProductsBlock", "Catalog", new { productThumbPictureSize = 32 })*@
 
                 <div class="thumbnail tile tile-double tile-teal" style="background-color:#E51400;">
-                    <a href="@Url.RouteUrl("Topic", new { SystemName = "paymentinfo" })">
+                    <a style="display:block;" href="@Url.RouteUrl("Topic", new { SystemName = "paymentinfo" })">
                         <img src="/content/images/pay.png" />
                         <p>Thanh toán khi nhận hàng</p>
                     </a>
                 </div>
                
                 <div class="thumbnail tile tile-double" style="background-color:#7cbb00;">
-                    <a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
+                    <a style="display:block;" href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
                         <img src="/content/images/turn.png" />
-                        <p>Trả hàng trong vòng 7 ngày</p>
+                        <p>Nhận hàng trong vòng 3 ngày</p>
                     </a>
                 </div>
 
 
                 <div class="thumbnail tile tile-double tile-orange" style="background-color:#FFA500;">
-                    <a href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
+                    <a style="display:block;" href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">
                         <img src="/content/images/delivery.png" />
-                        <p>Giao hàng miển phí tại HCM</p>
+                        <p>Giao hàng miển phí với đơn hàng >500k</p>
                     </a>
                 </div>
+
+                 <div class="thumbnail tile tile-double tile-orange" style="background-color:#2CA3DC">
+                    <a style="display:block;" href="http://facebook.com/itmeshop">
+                        <img src="/content/images/fb.png" />
+                        <p>ITME Shop trên Facebook</p>
+                    </a>
+                </div>
+
+
             </div>
            
         </div>

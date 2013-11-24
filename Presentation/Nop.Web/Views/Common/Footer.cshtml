@@ -1,76 +1,72 @@
 ﻿@model FooterModel
 @using Nop.Web.Models.Common;
- 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="widget">
-                <h4>Thông tin liên hệ</h4>
-                <address>
-                    <strong>Scaffold company, Inc.</strong><br>
-                    445 Mypark Ave, Suite 800<br>
-                    Jakarta, Indonesia 14210<br>
-                    <abbr title="Phone">P:</abbr>
-                    (123) 456-7890
-                </address>
-                <address>
-                    <strong>Contact us</strong><br>
-                    <a href="mailto:#">info@itmeshop.com</a>
-                </address>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="widget">
-                <h4>Hỗ Trợ khách hàng</h4>
-                <ul class="nav nav-list regular">
-                    <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a>
-                    </li>
-                    <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a>
-                    </li>
-                    <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "conditionsofUse" })">@T("ConditionsOfUse")</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="widget">
-                <h4>Hình thức thanh toán</h4>
-                <ul class="ui-listHorizontal payment-list">
-                    <li class="pay-icon ipayVisa " title="Visa"></li>
-                    <li class="pay-icon ipayMaster " title=" Master Card"></li>
-                    <li class="pay-icon ipayCOD " title="Thanh toán khi nhận hàng"></li>
-                </ul>
 
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="widget">
-                @Html.Action("NewsletterBox", "Newsletter")
+<div class="row">
+    <div class="col-md-3">
+        <div class="widget">
 
-                <div class="socialmedia">
-                    <span class="hdl">Follow us</span>
-                    <ul>
-                        <li><a class="social facebook" href="https://www.facebook.com/itmeshop" target="_blank"
-                            title="Facebook"></a></li>
-                        <li><a class="social google" href="https://plus.google.com/100225826830231121520?prsrc=3"
-                            target="_blank" title="Google+" rel="publisher"></a></li>
-                        <li><a class="social linkedin" href="http://www.linkedin.com/company/itmeshop"
-                            target="_blank" title="LinkedIn"></a></li>
-                        <li><a class="social twitter" href="https://twitter.com/#!/itmeshop" target="_blank"
-                            title="Twitter"></a></li>
-                        <li><a class="social youtube" href="http://www.youtube.com/user/itmeshop" target="_blank"
-                            title="Youtube"></a></li>
-                        <li><a class="social zing" href="http://me.zing.vn/b/itmeshop" target="_blank" title="ZingMe">
-                        </a></li>
-                    </ul>
-                </div>
+            @Html.Action("TopicBlock", "Topic", new { systemName = "ContactFooter" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="widget">
+           
+              <div class="topic-html-content-title">
+                <h2 class="topic-html-content-header">Hỗ Trợ khách hàng</h2>
+            </div>
+            <ul class="nav nav-list regular">
+                <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a>
+                </li>
+                <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a>
+                </li>
+                <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "conditionsofUse" })">@T("ConditionsOfUse")</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="widget">
+
+            <div class="topic-html-content-title">
+                <h2 class="topic-html-content-header">Hình thức thanh toán</h2>
+            </div>
+            <ul class="ui-listHorizontal payment-list">
+                <li class="pay-icon ipayVisa " title="Visa"></li>
+                <li class="pay-icon ipayMaster " title=" Master Card"></li>
+                <li class="pay-icon ipayCOD " title="Thanh toán khi nhận hàng"></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="widget">
+            @Html.Action("NewsletterBox", "Newsletter")
+
+            <div class="socialmedia">
+                <span class="hdl">Follow us</span>
+                <ul>
+                    <li><a class="social facebook" href="https://www.facebook.com/itmeshop" target="_blank"
+                        title="Facebook"></a></li>
+                    <li><a class="social google" href="https://plus.google.com/100225826830231121520?prsrc=3"
+                        target="_blank" title="Google+" rel="publisher"></a></li>
+                    <li><a class="social linkedin" href="http://www.linkedin.com/company/itmeshop"
+                        target="_blank" title="LinkedIn"></a></li>
+                    <li><a class="social twitter" href="https://twitter.com/#!/itmeshop" target="_blank"
+                        title="Twitter"></a></li>
+                    <li><a class="social youtube" href="http://www.youtube.com/user/itmeshop" target="_blank"
+                        title="Youtube"></a></li>
+                    <li><a class="social zing" href="http://me.zing.vn/b/itmeshop" target="_blank" title="ZingMe">
+                    </a></li>
+                </ul>
             </div>
         </div>
     </div>
- 
+</div>
+
 <div class="footer">
 
     <div class="footer-disclaimer">
-                 Bản quyền © 2013 ITME Shop.
+        Bản quyền © 2013 ITME Shop.
     </div>
     <div class="footer-store-theme">
         @Html.Action("StoreThemeSelector", "Common")
