@@ -3,7 +3,7 @@
 @if (Model.Display)
 {
     <div class="order-review-data">
-        <ul class="billing-info">
+       @* <ul class="billing-info">
             <li class="title">
                 <strong>@T("Order.BillingAddress")</strong>
             </li>
@@ -82,6 +82,7 @@
                 </li>
             }
         </ul>
+        *@
         @if (Model.IsShippable)
         {
             <ul class="shipping-info">

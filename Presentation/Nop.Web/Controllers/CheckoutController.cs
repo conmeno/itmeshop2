@@ -1291,7 +1291,7 @@ namespace Nop.Web.Controllers
                     _workContext.CurrentCustomer.ShippingAddress = address;
                     _customerService.UpdateCustomer(_workContext.CurrentCustomer);
                 }
-
+                
                 var shippingMethodModel = PrepareShippingMethodModel(cart);
                 return Json(new
                 {
@@ -1563,7 +1563,9 @@ namespace Nop.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     //get payment info
+                    
                     var paymentInfo = paymentController.GetPaymentInfo(form);
+                    
                     //session save
                     _httpContext.Session["OrderPaymentInfo"] = paymentInfo;
 

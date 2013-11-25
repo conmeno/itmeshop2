@@ -12,6 +12,7 @@
 
     //title
     Html.AddTitleParts(T("PageTitle.Checkout").Text);
+   // Model.ShippingRequired = false;
 }
 <div class="page checkout-page">
     <div class="page-title">
@@ -19,7 +20,7 @@
     </div>
     <div class="page-body checkout-data">
         <ol class="opc" id="checkout-steps">
-            <li id="opc-billing" class="tab-section allow">
+           @* <li id="opc-billing" class="tab-section allow">
                 <div class="step-title">
                     <span class="number">1</span>
                     <h2>@T("Checkout.BillingAddress")</h2>
@@ -28,7 +29,7 @@
                     <form id="co-billing-form" action="">
                     <div id="checkout-billing-load">
                         @Html.Action("OpcBillingForm", "Checkout")
-                        @*billing address content will be loaded here*@
+                       
                     </div>
                     </form>
                     <script type="text/javascript">
@@ -42,18 +43,19 @@
                         <span class="please-wait" id="billing-please-wait" style="display: none;">@T("Common.LoadingNextStep")</span>
                     </div>
                 </div>
-            </li>
+            </li>*@
             @if (Model.ShippingRequired)
             {
-                <li id="opc-shipping" class="tab-section">
+                <li id="opc-shipping" class="tab-section allow">
                     <div class="step-title">
-                        <span class="number">2</span>
+                        <span class="number">1</span>
                         <h2>@T("Checkout.ShippingAddress")</h2>
                     </div>
-                    <div id="checkout-step-shipping" class="step a-item" style="display: none;">
+                    <div id="checkout-step-shipping" class="step a-item" style="display:none;">
                         <form action="" id="co-shipping-form">
                         <div id="checkout-shipping-load">
                             @*shipping address content will be loaded here*@
+                              
                         </div>
                         </form>
                         <script type="text/javascript">
@@ -65,14 +67,14 @@
                         <div class="buttons" id="shipping-buttons-container">
                             <p class="back-link">
                                 <a href="#" onclick="Checkout.back(); return false;"><small>&laquo; </small>@T("Common.Back")</a></p>
-                            <input type="button" class="button-1 new-address-next-step-button" title="@T("Common.Continue")" onclick="Shipping.save()" value="@T("Common.Continue")" />
+                            <input type="button" class="button-1 new-address-next-step-button" title="@T("Common.Continue")" onclick="Shipping.save();" value="@T("Common.Continue")" />
                             <span id="shipping-please-wait" class="please-wait" style="display: none;"> @T("Common.LoadingNextStep")</span>
                         </div>
                     </div>
                 </li>
                 <li id="opc-shipping_method" class="tab-section">
                     <div class="step-title">
-                        <span class="number">3</span>
+                        <span class="number">2</span>
                         <h2>@T("Checkout.ShippingMethod")</h2>
                     </div>
                     <div id="checkout-step-shipping-method" class="step a-item" style="display: none;">
@@ -95,7 +97,7 @@
             }
             <li id="opc-payment_method" class="tab-section">
                 <div class="step-title">
-                    <span class="number">@(Model.ShippingRequired ? "4" : "2")</span>
+                    <span class="number">@(Model.ShippingRequired ? "3" : "2")</span>
                     <h2>@T("Checkout.PaymentMethod")</h2>
                 </div>
                 <div id="checkout-step-payment-method" class="step a-item" style="display: none;">
@@ -117,7 +119,7 @@
             </li>
             <li id="opc-payment_info" class="tab-section">
                 <div class="step-title">
-                    <span class="number">@(Model.ShippingRequired ? "5" : "3")</span>
+                    <span class="number">@(Model.ShippingRequired ? "4" : "3")</span>
                     <h2>@T("Checkout.PaymentInfo")</h2>
                 </div>
                 <div id="checkout-step-payment-info" class="step a-item" style="display: none;">
@@ -139,7 +141,7 @@
             </li>
             <li id="opc-confirm_order" class="tab-section">
                 <div class="step-title">
-                    <span class="number">@(Model.ShippingRequired ? "6" : "4")</span>
+                    <span class="number">@(Model.ShippingRequired ? "5" : "4")</span>
                     <h2>@T("Checkout.ConfirmOrder")</h2>
                 </div>
                 <div id="checkout-step-confirm-order" class="step a-item" style="display: none;">
@@ -161,8 +163,11 @@
     </div>
     <script type="text/javascript">
         Accordion.init('checkout-steps', '.step-title', true);
-        Accordion.openSection('#opc-billing');
+        Accordion.openSection('#opc-shipping');
 
         Checkout.init('@(storeLocation)cart/');
+        
+        Shipping.save();
+        
     </script>
 </div>

@@ -545,6 +545,7 @@ namespace Nop.Web.Controllers
             
             if (ModelState.IsValid)
             {
+                model.LastName = "";
                 if (_customerSettings.UsernamesEnabled && model.Username != null)
                 {
                     model.Username = model.Username.Trim();

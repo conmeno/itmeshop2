@@ -40,11 +40,13 @@
         @Html.ValidationMessageFor(model => model.FirstName)
     </div>
     <div class="inputs">
-        @Html.LabelFor(model => model.LastName, new { }, ":")
-            @Html.EditorFor(model => model.LastName)
+        @*@Html.LabelFor(model => model.LastName, new { }, ":")
+            @Html.HiddenFor(model => model.LastName, new { @value="xxx"})
         @Html.RequiredHint()
         @Html.ValidationMessageFor(model => model.LastName)
+        *@
 
+        <input id="ShippingNewAddress_LastName" name="ShippingNewAddress.LastName" type="hidden" value=".">
     </div>
     <div class="inputs">
         @Html.LabelFor(model => model.Email, new { }, ":")
