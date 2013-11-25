@@ -11,6 +11,7 @@
                     title="" onchange="Shipping.newAddress(!this.value)">
                     @foreach (var address in Model.ExistingAddresses)
                     {
+                        if(address.Email!="none@none.none"){
                         var addressLine = "";
                         addressLine += address.FirstName;
                         addressLine += " " + address.LastName;
@@ -35,6 +36,7 @@
                             addressLine += ", " + address.CountryName;
                         }
                         <option value="@(address.Id)">@(addressLine)</option>
+                    }
                     }
                     <option value="" selected="@Model.NewAddressPreselected">@T("Checkout.NewAddress")</option>
                 </select>

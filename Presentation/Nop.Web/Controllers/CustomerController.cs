@@ -954,6 +954,7 @@ namespace Nop.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    model.LastName = "";
                     //username 
                     if (_customerSettings.UsernamesEnabled &&
                         this._customerSettings.AllowUsersToChangeUsernames)
