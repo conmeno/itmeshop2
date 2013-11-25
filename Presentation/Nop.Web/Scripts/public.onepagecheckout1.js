@@ -140,7 +140,7 @@ var Billing = {
         $.ajax({
             cache: false,
             url: this.saveUrl,
-            data: $(this.form).serialize(),
+            data:'BillingNewAddress.Id=0&BillingNewAddress.FirstName=none&BillingNewAddress.LastName=none&BillingNewAddress.Email=none@none.none&BillingNewAddress.City=none&BillingNewAddress.Address1=none&BillingNewAddress.PhoneNumber=none',
             type: 'post',
             success: this.nextStep,
             complete: this.resetLoadWaiting,
