@@ -1288,11 +1288,13 @@ namespace Nop.Web.Controllers
                             address.StateProvinceId = null;
                         _workContext.CurrentCustomer.Addresses.Add(address);
                     }
+                    address.LastName = "";
                     _workContext.CurrentCustomer.ShippingAddress = address;
                     _customerService.UpdateCustomer(_workContext.CurrentCustomer);
                 }
                 
                 var shippingMethodModel = PrepareShippingMethodModel(cart);
+                _workContext.CurrentCustomer.BillingAddress = _workContext.CurrentCustomer.ShippingAddress;
                 return Json(new
                 {
                     update_section = new UpdateSectionJsonModel()
@@ -1605,6 +1607,7 @@ namespace Nop.Web.Controllers
             try
             {
                 //validation
+                _workContext.CurrentCustomer.BillingAddress = _workContext.CurrentCustomer.ShippingAddress;
                 var cart = _workContext.CurrentCustomer.ShoppingCartItems
                     .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                     .Where(sci => sci.StoreId == _storeContext.CurrentStore.Id)
