@@ -48,7 +48,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td>
+                        @*<td>
                             <ul class="billing-info">
                                 <li class="title">
                                     <strong>
@@ -140,7 +140,7 @@
                                     </li>
                                     if (!Model.PrintMode && Model.CanRePostProcessPayment)
                                     {
-@*Completing payment support (for redirection payment methods)*@
+ 
                                     <li class="repost">
                                         @using (Html.BeginRouteForm("OrderDetails", FormMethod.Post))
                                         {
@@ -164,7 +164,7 @@
                                     </li>
                                 }
                             </ul>
-                        </td>
+                        </td>*@
                         @if (Model.IsShippable)
                         {
                             <td>

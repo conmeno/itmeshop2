@@ -4,7 +4,9 @@
 @if (Model.CountryEnabled && Model.StateProvinceEnabled)
 {
     <script type="text/javascript">
+
         $(function () {
+
             $("#@Html.FieldIdFor(model => model.CountryId)").change(function () {
                 var selectedItem = $(this).val();
                 var ddlStates = $("#@Html.FieldIdFor(model => model.StateProvinceId)");
@@ -35,7 +37,7 @@
 <div class="edit-address">
     <div class="inputs">
         @Html.LabelFor(model => model.FirstName, new { }, ":")
-            @Html.EditorFor(model => model.FirstName)
+        @Html.EditorFor(model => model.FirstName)
         @Html.RequiredHint()
         @Html.ValidationMessageFor(model => model.FirstName)
     </div>
@@ -46,11 +48,12 @@
         @Html.ValidationMessageFor(model => model.LastName)
         *@
 
-        <input id="ShippingNewAddress_LastName" name="ShippingNewAddress.LastName" type="hidden" value=".">
+        <input id="ShippingNewAddress_LastName" name="ShippingNewAddress.LastName" type="hidden"
+            value=".">
     </div>
     <div class="inputs">
         @Html.LabelFor(model => model.Email, new { }, ":")
-            @Html.EditorFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
         @Html.RequiredHint()
         @Html.ValidationMessageFor(model => model.Email)
     </div>
@@ -58,7 +61,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.Company, new { }, ":")
-                @Html.EditorFor(model => model.Company)
+            @Html.EditorFor(model => model.Company)
             @if (Model.CompanyRequired)
             {
                 @Html.RequiredHint()
@@ -70,7 +73,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.CountryId, new { }, ":")
-                @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
+            @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
             @Html.RequiredHint()
             @Html.ValidationMessageFor(model => model.CountryId)
         </div>
@@ -80,7 +83,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.StateProvinceId, new { }, ":")
-                @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates)
+            @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates)
             <span id="states-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
             @Html.ValidationMessageFor(model => model.StateProvinceId)
         </div>
@@ -89,7 +92,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.City, new { }, ":")
-                @Html.EditorFor(model => model.City)
+            @Html.EditorFor(model => model.City)
 
             @if (Model.CityRequired)
             {
@@ -102,7 +105,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.Address1, new { }, ":")
-                @Html.EditorFor(model => model.Address1)
+            @Html.EditorFor(model => model.Address1)
             @if (Model.StreetAddressRequired)
             {
                 @Html.RequiredHint()
@@ -114,7 +117,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.Address2, new { }, ":")
-                @Html.EditorFor(model => model.Address2)
+            @Html.EditorFor(model => model.Address2)
             @if (Model.StreetAddress2Required)
             {
                 @Html.RequiredHint()
@@ -126,7 +129,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.ZipPostalCode, new { }, ":")
-                @Html.EditorFor(model => model.ZipPostalCode)
+            @Html.EditorFor(model => model.ZipPostalCode)
             @if (Model.ZipPostalCodeRequired)
             {
                 @Html.RequiredHint()
@@ -138,7 +141,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.PhoneNumber, new { }, ":")
-                @Html.EditorFor(model => model.PhoneNumber)
+            @Html.TextBoxFor(model => model.PhoneNumber, new { OnKeyDown="validateTexboxNumber(event)" })
             @if (Model.PhoneRequired)
             {
                 @Html.RequiredHint()
@@ -150,7 +153,7 @@
     {
         <div class="inputs">
             @Html.LabelFor(model => model.FaxNumber, new { }, ":")
-                @Html.EditorFor(model => model.FaxNumber)
+            @Html.EditorFor(model => model.FaxNumber)
             @if (Model.FaxRequired)
             {
                 @Html.RequiredHint()
@@ -159,3 +162,22 @@
         </div>
     }
 </div>
+
+<script type="text/javascript">
+    function validateTexboxNumber(event) {
+        if ($.inArray(event.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            // Allow: Ctrl+A
+           (event.keyCode == 65 && event.ctrlKey === true) ||
+            // Allow: home, end, left, right
+           (event.keyCode >= 35 && event.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        else {
+            // Ensure that it is a number and stop the keypress
+            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                event.preventDefault();
+            }
+        }
+    }
+</script>

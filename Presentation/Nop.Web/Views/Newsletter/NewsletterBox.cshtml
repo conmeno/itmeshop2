@@ -8,7 +8,7 @@
         <div id="newsletter-subscribe-block" class="newsletter-subscribe-block">
             <span>@T("Newsletter.Subscribe"):</span>
             <div class="newsletter-email">
-            @Html.TextBoxFor(x => x.NewsletterEmail, new { id = "newsletter-email" })
+            @Html.TextBoxFor(x => x.NewsletterEmail, new { id = "newsletter-email", style="width:100%;" })
             @Html.ValidationMessageFor(x => x.NewsletterEmail)
             </div>
             <div class="buttons">

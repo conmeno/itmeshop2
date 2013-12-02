@@ -4,6 +4,7 @@ using FluentValidation.Attributes;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Mvc;
 using Nop.Web.Validators.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nop.Web.Models.Common
 {
@@ -75,6 +76,7 @@ namespace Nop.Web.Models.Common
         public bool PhoneRequired { get; set; }
         [NopResourceDisplayName("Address.Fields.PhoneNumber")]
         [AllowHtml]
+        //[RegularExpression(@"[0-9]",ErrorMessage = "Bạn vui lòng nhập số")]
         public string PhoneNumber { get; set; }
 
         public bool FaxEnabled { get; set; }
