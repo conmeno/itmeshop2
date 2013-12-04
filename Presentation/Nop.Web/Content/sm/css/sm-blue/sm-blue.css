@@ -60,9 +60,9 @@
 	.sm-blue a {
 		padding:13px 24px;
 		color:#fff;
-		font-size:18px;
+		font-size:16px;
 		line-height:23px;
-		font-family:"PT Sans Narrow","Arial Narrow",Arial,Helvetica,sans-serif;
+		font-family:Arial,Helvetica,sans-serif;
 		font-weight:bold;
 		text-decoration:none;
 		text-shadow:0 1px 0 rgba(0,0,0,0.3);
