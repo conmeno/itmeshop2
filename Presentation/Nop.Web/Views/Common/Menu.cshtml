@@ -67,7 +67,7 @@
     }
 
     #menu {
-        background: #7CBB00;
+        background: #2892cf;
         margin: 15px 0px;
         height: 40px;
         padding: 0px 0px 0px 3px;
@@ -291,7 +291,7 @@
                         border-top: 1px solid #eee;
                     }
 </style>
-<nav id="menu">
+<nav id="menu" style="position:relative;">
     <ul>
         @Html.Widget("header_menu_before")
         <li class="home"><a title="Home" href="@Url.RouteUrl("HomePage")"><span>@T("HomePage")</span></a></li>
@@ -396,7 +396,7 @@
         <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
 
         @*<li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>*@
-
+        <li style="position:absolute;right:0;top:-13px;"><img src="content/images/HOTLINE.png"/></li>
         @Html.Widget("header_menu_after")
     </ul>
 </nav>
