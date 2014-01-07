@@ -4,8 +4,37 @@
 <div class="row">
     <div class="col-md-3">
         <div class="widget">
+            <div class="topic-html-content-title">
+                <h2 class="topic-html-content-header">Thông tin</h2>
+            </div>
+            <ul class="nav nav-list regular">
+                <li class="nav-header"><a style="padding:0" href="http://itme.vn" target="_blank">Về ITME Shop</a>
+                </li>
+                <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a>
+                </li> 
+            </ul>
 
-            @Html.Action("TopicBlock", "Topic", new { systemName = "ContactFooter" })
+
+              <div class="socialmedia">
+                <span class="hdl">Follow us</span>
+                <ul>
+                    <li><a class="social facebook" href="https://www.facebook.com/ItmeShopvn" target="_blank"
+                        title="Facebook"></a></li>
+                    @* <li><a class="social google" href="https://plus.google.com/100225826830231121520?prsrc=3"
+                        target="_blank" title="Google+" rel="publisher"></a></li>
+                    <li><a class="social linkedin" href="http://www.linkedin.com/company/itmeshop"
+                        target="_blank" title="LinkedIn"></a></li>
+                    <li><a class="social twitter" href="https://twitter.com/#!/itmeshop" target="_blank"
+                        title="Twitter"></a></li>
+                    <li><a class="social youtube" href="http://www.youtube.com/user/itmeshop" target="_blank"
+                        title="Youtube"></a></li>
+                    <li><a class="social zing" href="http://me.zing.vn/b/itmeshop" target="_blank" title="ZingMe">
+                    </a></li>*@
+                </ul>
+            </div>
+
+
+
         </div>
     </div>
     <div class="col-md-3">
@@ -16,9 +45,7 @@
             </div>
             <ul class="nav nav-list regular">
                 <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "shippinginfo" })">@T("ShippingReturns")</a>
-                </li>
-                <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "privacyinfo" })">@T("PrivacyNotice")</a>
-                </li>
+                </li>            
                 <li class="nav-header"><a style="padding:0" href="@Url.RouteUrl("Topic", new { SystemName = "conditionsofUse" })">@T("ConditionsOfUse")</a>
                 </li>
             </ul>
@@ -42,25 +69,12 @@
         <div class="widget">
             @Html.Action("NewsletterBox", "Newsletter")
 
-            <div class="socialmedia">
-                <span class="hdl">Follow us</span>
-                <ul>
-                    <li><a class="social facebook" href="https://www.facebook.com/ItmeShopvn" target="_blank"
-                        title="Facebook"></a></li>
-                   @* <li><a class="social google" href="https://plus.google.com/100225826830231121520?prsrc=3"
-                        target="_blank" title="Google+" rel="publisher"></a></li>
-                    <li><a class="social linkedin" href="http://www.linkedin.com/company/itmeshop"
-                        target="_blank" title="LinkedIn"></a></li>
-                    <li><a class="social twitter" href="https://twitter.com/#!/itmeshop" target="_blank"
-                        title="Twitter"></a></li>
-                    <li><a class="social youtube" href="http://www.youtube.com/user/itmeshop" target="_blank"
-                        title="Youtube"></a></li>
-                    <li><a class="social zing" href="http://me.zing.vn/b/itmeshop" target="_blank" title="ZingMe">
-                    </a></li>*@
-                </ul>
-            </div>
+         
         </div>
     </div>
+</div>
+<div class="row">   
+    @Html.Action("TopicBlock", "Topic", new { systemName = "ContactFooter" })
 </div>
 
 <div class="footer">
