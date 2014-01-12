@@ -167,16 +167,16 @@ namespace Nop.Plugin.Payments.PayPalDirect.Controllers
                 Text = "Master card",
                 Value = "MasterCard",
             });
-            model.CreditCardTypes.Add(new SelectListItem()
-            {
-                Text = "Discover",
-                Value = "Discover",
-            });
-            model.CreditCardTypes.Add(new SelectListItem()
-            {
-                Text = "Amex",
-                Value = "Amex",
-            });
+            //model.CreditCardTypes.Add(new SelectListItem()
+            //{
+            //    Text = "Discover",
+            //    Value = "Discover",
+            //});
+            //model.CreditCardTypes.Add(new SelectListItem()
+            //{
+            //    Text = "Amex",
+            //    Value = "Amex",
+            //});
 
             //years
             for (int i = 0; i < 15; i++)
